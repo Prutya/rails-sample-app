@@ -57,6 +57,9 @@ GEM
     execjs (2.7.0)
     ffi (1.9.14)
     formatador (0.2.5)
+    fuubar (2.2.0)
+      rspec-core (~> 3.0)
+      ruby-progressbar (~> 1.4)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     guard (2.13.0)
@@ -212,6 +215,7 @@ PLATFORMS
 DEPENDENCIES
   byebug (= 9.0.0)
   coffee-rails (= 4.2.1)
+  fuubar (= 2.2.0)
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
   jbuilder (= 2.4.1)
