@@ -15,10 +15,11 @@ gem 'omniauth-vkontakte', '1.3.7'
 gem 'omniauth-facebook',  '4.0.0'
 
 group :development, :test do
-  gem 'sqlite3',     '1.3.11'
-  gem 'byebug',      '9.0.0', platform: :mri
-  gem 'rspec-rails', '3.5.0'
-  gem 'fuubar',      '2.2.0'
+  gem 'sqlite3',      '1.3.11'
+  gem 'byebug',       '9.0.0', platform: :mri
+  gem 'rspec-rails',  '3.5.0'
+  gem 'fuubar',       '2.2.0'
+  gem 'factory_girl', '4.7.0'
 end
 
 group :development do
