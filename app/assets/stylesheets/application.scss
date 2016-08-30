@@ -17,15 +17,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$gray-medium-ligth: #BFBFBF;
+$gray-light-medium: lighten($gray-base, 80.0%) !default;
+
+/* common */
 
 body {
   padding-top: 60px;
 }
 
 footer {
-  padding-top: 10px;
-  border-top: 1px solid $gray-medium-ligth;
+  margin-top: 20px;
+  border-top: 1px solid $gray-light-medium;
+  p {
+    color: $gray-light;
+    font-size: 90%;
+    padding-top: 10px;
+  }
 }
 
 .logo {
@@ -35,6 +42,19 @@ footer {
   font-size: 1.7em;
 }
 
-.small {
-  color: $gray-light;
+/* alerts */
+
+.alert-alert {
+  @extend .alert-warning;
+}
+
+.alert-notice {
+  @extend .alert-info;
+}
+
+.error-explanation {
+  padding: 10px;
+  h2 {
+    font-size: 150%;
+  }
 }
