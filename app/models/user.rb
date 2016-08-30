@@ -16,9 +16,9 @@ class User < ApplicationRecord
       provider: auth.provider,
       uid: auth.uid.to_s,
       token: auth.credentials.token,
-      secret: auth.credentials.secret).first_or_initialize
+      secret: auth.credentials.secret
+    ).first_or_initialize
 
-    # identity.profile_page = auth.info.urls.first.last unless identity.persisted?
     if identity.user.blank?
       user = current_user || User.where(email: auth.info.email).first
       if user.blank?
@@ -37,5 +37,15 @@ class User < ApplicationRecord
   def fetch_details(auth)
     self.name = auth.info.name
     self.email = auth.info.email
+    parse_location(auth.info.location)
+  end
+
+  def parse_location(location_string)
+    return if location_string.nil?
+    location = location_string.split(", ")
+    unless location.nil?
+      self.country = location[0] || ""
+      self.city = location[1] || ""
+    end
   end
 end

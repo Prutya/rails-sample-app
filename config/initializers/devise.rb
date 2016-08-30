@@ -248,15 +248,20 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  settings = {
+  config.omniauth :vkontakte, ENV['VK_API_ID'], ENV['VK_API_SECRET'], {
     scope:      'email',
     display:    'page',
     lang:       'en',
     https:      1,
     image_size: 'original'
   }
-  config.omniauth :vkontakte, ENV['VK_API_ID'], ENV['VK_API_SECRET'], settings
-  config.omniauth :facebook, ENV['FB_API_ID'], ENV['FB_API_SECRET'], settings
+  config.omniauth :facebook, ENV['FB_API_ID'], ENV['FB_API_SECRET'], {
+    scope:      'email,user_location',
+    display:    'page',
+    lang:       'en',
+    https:      1,
+    image_size: 'original'
+  }
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
