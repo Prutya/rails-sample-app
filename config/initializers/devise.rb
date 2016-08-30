@@ -250,7 +250,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   settings = {
     scope:      'email',
-    display:    'popup',
+    display:    'page',
     lang:       'en',
     https:      1,
     image_size: 'original'
