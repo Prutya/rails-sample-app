@@ -12,7 +12,7 @@ class User < ApplicationRecord
          :omniauthable
 
   def name
-    "#{first_name}, #{last_name}"
+    "#{first_name} #{last_name}"
   end
 
   def self.create_with_omniauth(info)
